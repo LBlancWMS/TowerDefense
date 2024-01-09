@@ -1,0 +1,34 @@
+{
+    "name": "InputAction_inGame",
+    "maps": [
+        {
+            "name": "AM_inGame",
+            "id": "8c955d85-da53-4e38-a383-f62ef8dab8ad",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "bb4121cd-4ffd-4b25-9ddb-334b4a8a59c3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5fcd2a1e-ae65-4217-85f1-e124f4d5eb60",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

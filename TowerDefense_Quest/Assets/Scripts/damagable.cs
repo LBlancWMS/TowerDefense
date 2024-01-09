@@ -1,18 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class ennemiesHealth : MonoBehaviour
+public class damagable : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int maxHealth = 100;
+    private int currentHealth;
+
+    private void Start()
     {
-        
+        currentHealth = maxHealth;
+    }
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Die()
     {
-        
+        Destroy(gameObject);
     }
 }
