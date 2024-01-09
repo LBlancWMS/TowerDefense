@@ -11,10 +11,18 @@ public class turret : MonoBehaviour
 
     public float turnSpeed = 7f;
 
+    public float fireRate = 1f;
+    private float fireCooldown = 0f;
+
+    public GameObject projectile;
+    public Transform firePoint;
+
+
     private void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
+    
     private void UpdateTarget()
     {
         GameObject[] ennemies = GameObject.FindGameObjectsWithTag(enemyTag);
@@ -52,6 +60,25 @@ public class turret : MonoBehaviour
         Quaternion look = Quaternion.LookRotation(dir);
         Vector3 rotation = Quaternion.Lerp(turretPartRotation.rotation, look, Time.deltaTime * turnSpeed).eulerAngles;
         turretPartRotation.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+
+        if (fireCooldown <= 0)
+        {
+            Shoot();
+            fireCooldown = 1 / fireRate;
+        }
+
+        fireCooldown -= Time.deltaTime;
+    }
+
+    void Shoot()
+    {
+        GameObject projectileShoot = Instantiate(projectile, firePoint.position, firePoint.rotation);
+        Bullet bullet = projectileShoot.GetComponent<Bullet>();
+
+        if (bullet != null)
+        {
+            bullet.Seek(target);
+        }
     }
 
     private void OnDrawGizmosSelected()
