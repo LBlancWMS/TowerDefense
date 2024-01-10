@@ -72,12 +72,14 @@ public class turret : MonoBehaviour
 
     void Shoot()
     {
-        GameObject projectileShoot = Instantiate(projectile, firePoint.position, firePoint.rotation);
-        Bullet bullet = projectileShoot.GetComponent<Bullet>();
+        bulletPool bulletPoolInstance = bulletPool.bulletPoolInstance;
+        Bullet projectileShot = bulletPoolInstance.GetBullet();
 
-        if (bullet != null)
+        if (projectileShot != null)
         {
-            bullet.Seek(target);
+            projectileShot.transform.position = firePoint.position;
+            projectileShot.gameObject.SetActive(true);
+            projectileShot.Seek(target);
         }
     }
 

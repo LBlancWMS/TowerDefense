@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
     {
         if (target == null)
         {
-            Destroy(gameObject);
+            bulletPool.bulletPoolInstance.ReturnToPool(this);
             return;
         }
 
@@ -33,8 +33,9 @@ public class Bullet : MonoBehaviour
         transform.Translate(dir.normalized * distanceEachFrame, Space.World);
     }
 
-    void HitTarget()
+    public void HitTarget()
     {
-        Destroy(gameObject);
+        bulletPool.bulletPoolInstance.ReturnToPool(this);
     }
+
 }

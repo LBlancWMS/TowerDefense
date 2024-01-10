@@ -155,7 +155,7 @@ MonoBehaviour:
   enemyTag: Enemy
   turretPartRotation: {fileID: 6811236266307805501}
   turnSpeed: 7
-  fireRate: 1
+  fireRate: 2
   projectile: {fileID: 4158156637629932549, guid: 630fe4a52d730084fa8ac2af2423ea01, type: 3}
   firePoint: {fileID: 8442212850151944752}
 --- !u!1 &7384674430160024853

@@ -5673,6 +5673,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3324609108732577531, guid: 8cba8fc96b5347b4f931d958a257f379, type: 3}
   m_PrefabInstance: {fileID: 738175061}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &744202036
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 744202038}
+  - component: {fileID: 744202037}
+  m_Layer: 0
+  m_Name: BulletPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &744202037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744202036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3071b4ce5934254db698738820d90db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 4158156637629932549, guid: 630fe4a52d730084fa8ac2af2423ea01, type: 3}
+  poolSize: 10
+  willGrow: 1
+--- !u!4 &744202038
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744202036}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.6592722, y: -2.1711106, z: -3.5157712}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &752520604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6882,6 +6929,10 @@ PrefabInstance:
     - target: {fileID: 1350716177979391562, guid: ac9331cac0471c84fbcb62656531f390, type: 3}
       propertyPath: m_Name
       value: P_ennemi
+      objectReference: {fileID: 0}
+    - target: {fileID: 1350716177979391562, guid: ac9331cac0471c84fbcb62656531f390, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6455655099824020266, guid: ac9331cac0471c84fbcb62656531f390, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16697,3 +16748,4 @@ SceneRoots:
   - {fileID: 804190430}
   - {fileID: 1295640831}
   - {fileID: 875004489}
+  - {fileID: 744202038}
