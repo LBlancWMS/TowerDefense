@@ -1,18 +1,57 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ennemiesMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float speed = 5f;
+    private Transform[] waypoints;
+    private int currentWaypointIndex = 0;
+    private ennemiesSpawner spawner;
+
     void Start()
     {
-        
+        spawner = GameObject.FindGameObjectWithTag("ennemiesSpawner").GetComponent<ennemiesSpawner>();
+        waypoints = spawner.waypoints;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (waypoints.Length > 0)
+        {
+            MoveToWaypoint();
+        }
+    }
+
+    public void ResetWaypoints()
+    {
+        currentWaypointIndex = 0;
+    }
+
+    void MoveToWaypoint()
+    {
+        Vector3 targetPosition = waypoints[currentWaypointIndex].position;
+        targetPosition.y = 3;
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+
+        if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
+        {
+            NextWaypoint();
+        }
+    }
+
+    void NextWaypoint()
+    {
+        currentWaypointIndex++;
+        if (currentWaypointIndex >= waypoints.Length)
+        {
+            GameObject baseObject = GameObject.FindGameObjectWithTag("Base");
+            baseObject.GetComponent<Base>().takeDMG(1);
+            ReturnToPool();
+        }
+    }
+
+    void ReturnToPool()
+    {
+        ennemiesSpawner spawner = GameObject.Find("ennemiesSpawner").GetComponent<ennemiesSpawner>();
+        spawner.returnToPool(gameObject);
     }
 }

@@ -45,5 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 1350716177979391562, guid: ac9331cac0471c84fbcb62656531f390, type: 3}
+  waypoints: []
   poolSize: 10
   spawnRate: 1

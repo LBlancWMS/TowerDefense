@@ -1,15 +1,15 @@
-using System;
 using UnityEngine;
 
-public class damagable : MonoBehaviour
+public class Damagable : MonoBehaviour
 {
     public int maxHealth = 100;
     private int currentHealth;
 
     private void Start()
     {
-        currentHealth = maxHealth;
+        ResetHealth();
     }
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -22,6 +22,26 @@ public class damagable : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
+        ResetHealth();
+        ReturnToPool();
+    }
+
+    public void ResetHealth()
+    {
+        currentHealth = maxHealth;
+    }
+
+    private void ReturnToPool()
+    {
+        GameObject.FindGameObjectWithTag("ennemiesSpawner").GetComponent<ennemiesSpawner>().returnToPool(gameObject.transform.parent.gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Projectile"))
+        {
+            TakeDamage(100);
+            other.GetComponentInParent<Bullet>().HitTarget();
+        }
     }
 }

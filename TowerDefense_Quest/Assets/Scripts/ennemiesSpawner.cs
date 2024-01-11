@@ -5,8 +5,9 @@ using UnityEngine;
 public class ennemiesSpawner : MonoBehaviour
 {
     public GameObject prefabToSpawn;
-    public int poolSize = 10;
-    public float spawnRate = 1.0f;
+    public Transform[] waypoints;
+    private int poolSize = 500;
+    public float spawnRate = 0.2f;
 
     private List<GameObject> objectPool;
     private float nextSpawnTime;
@@ -25,16 +26,16 @@ public class ennemiesSpawner : MonoBehaviour
         }
     }
 
-    void InitializeObjectPool()
+void InitializeObjectPool()
+{
+    objectPool = new List<GameObject>();
+    for (int i = 0; i < poolSize; i++)
     {
-        objectPool = new List<GameObject>();
-        for (int i = 0; i < poolSize; i++)
-        {
-            GameObject obj = Instantiate(prefabToSpawn);
-            obj.SetActive(false);
-            objectPool.Add(obj);
-        }
+        GameObject obj = Instantiate(prefabToSpawn);
+        obj.SetActive(false);
+        objectPool.Add(obj);
     }
+}
 
     void SpawnFromPool()
     {
@@ -42,15 +43,25 @@ public class ennemiesSpawner : MonoBehaviour
         {
             if (!objectPool[i].activeInHierarchy)
             {
-                objectPool[i].transform.position = transform.position;
+                objectPool[i].transform.position = waypoints[0].position;
+                objectPool[i].transform.position = new Vector3(objectPool[i].transform.position.x, 3f, objectPool[i].transform.position.z);
                 objectPool[i].transform.rotation = transform.rotation;
                 objectPool[i].SetActive(true);
                 return;
             }
         }
+    }
 
-        GameObject newObj = Instantiate(prefabToSpawn);
-        newObj.SetActive(false);
-        objectPool.Add(newObj);
+    public void IncreaseWaves()
+    {
+            spawnRate *= 1.2f;
+    }
+
+    public void returnToPool(GameObject ennemi)
+    {
+        ennemi.transform.position = waypoints[0].position;
+        ennemi.transform.rotation = transform.rotation;
+        ennemi.GetComponent<ennemiesMovement>().ResetWaypoints();
+        ennemi.SetActive(false);
     }
 }
