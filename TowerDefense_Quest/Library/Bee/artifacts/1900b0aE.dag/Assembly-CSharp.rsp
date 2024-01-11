@@ -365,7 +365,10 @@
 "Assets/Scripts/nodeLogic.cs"
 "Assets/Scripts/playerController.cs"
 "Assets/Scripts/towerLogic.cs"
+"Assets/Scripts/UIs/Menus/Defeat_Menu.cs"
 "Assets/Scripts/UIs/Menus/Main_Menu.cs"
+"Assets/Scripts/UIs/Menus/Pause_Menu.cs"
+"Assets/Scripts/UIs/Menus/Victory_Menu.cs"
 -langversion:9.0
 
 /deterministic
