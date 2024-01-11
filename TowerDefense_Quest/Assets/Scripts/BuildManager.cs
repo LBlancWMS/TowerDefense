@@ -19,9 +19,9 @@ public class BuildManager : MonoBehaviour
         buildManagerInstance = this;
     }
 
-    private void Start()
+    public void NextTurretToBuild(GameObject turret)
     {
-        turretToBuild = standardTurretPrefab;
+        turretToBuild = turret;
     }
     public GameObject GetTurretToBuild() { return turretToBuild; }
 }

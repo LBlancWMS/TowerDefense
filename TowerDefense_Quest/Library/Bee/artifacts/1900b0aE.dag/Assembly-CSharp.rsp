@@ -368,7 +368,9 @@
 "Assets/Scripts/UIs/Menus/Defeat_Menu.cs"
 "Assets/Scripts/UIs/Menus/Main_Menu.cs"
 "Assets/Scripts/UIs/Menus/Pause_Menu.cs"
+"Assets/Scripts/UIs/Menus/Settings_Menu.cs"
 "Assets/Scripts/UIs/Menus/Victory_Menu.cs"
+"Assets/Scripts/UIs/UIs_In_Game/Shop.cs"
 -langversion:9.0
 
 /deterministic

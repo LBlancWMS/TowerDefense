@@ -145,6 +145,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 845550195637828839}
+  - component: {fileID: 5859022050491804246}
   m_Layer: 0
   m_Name: Settings_Menu
   m_TagString: Untagged
@@ -168,6 +169,22 @@ Transform:
   - {fileID: 1471893300858944431}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5859022050491804246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3675185750177104753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1f653ac7bfd06488c52f17ef6b222a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_mixer: {fileID: 0}
+  m_masterVolumeSlider: {fileID: 0}
+  m_musicVolumeSlider: {fileID: 0}
+  m_SFXVolumeSlider: {fileID: 0}
 --- !u!1 &7899892656449182644
 GameObject:
   m_ObjectHideFlags: 0
