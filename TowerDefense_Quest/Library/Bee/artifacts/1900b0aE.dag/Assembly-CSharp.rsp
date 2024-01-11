@@ -365,6 +365,7 @@
 "Assets/Scripts/nodeLogic.cs"
 "Assets/Scripts/playerController.cs"
 "Assets/Scripts/towerLogic.cs"
+"Assets/Scripts/UIs/Menus/Main_Menu.cs"
 -langversion:9.0
 
 /deterministic
