@@ -23,6 +23,7 @@ public class Base : MonoBehaviour
     public void EarnGold(int amount)
     {
         golds += amount;
+        UI_inGame.SetGoldsValue(golds);
     }
 
     public int GetCurrentGold()
@@ -80,6 +81,12 @@ public class Base : MonoBehaviour
             Time.timeScale = 0;
             Destroy(this);
         }
+    }
+
+    public void payGolds(int goldToPay)
+    {
+        golds -= goldToPay;
+        UI_inGame.SetGoldsValue(golds);
     }
 
     public int getHealth()

@@ -9,7 +9,7 @@ public class UI_InGame_Manager : MonoBehaviour
     [SerializeField] private GameObject pause_Menu;
     [SerializeField] private Text hp_Text;
     [SerializeField] private Text timer_Text;
-
+    [SerializeField] private Text golds_Text;
 
     public void SetPause()
     {
@@ -20,6 +20,11 @@ public class UI_InGame_Manager : MonoBehaviour
     public void SetHPText(int currentHP)
     {
         hp_Text.GetComponent<Text>().text = currentHP.ToString() + " Points de vie";
+    }
+
+    public void SetGoldsValue(int goldValues)
+    {
+        golds_Text.GetComponent<Text>().text = golds_Text.ToString() + " Golds";
     }
 
     public void SetTimerText(int timeRemaining)

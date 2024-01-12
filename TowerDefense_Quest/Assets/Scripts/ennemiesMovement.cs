@@ -30,6 +30,7 @@ public class ennemiesMovement : MonoBehaviour
     {
         Vector3 targetPosition = waypoints[currentWaypointIndex].position;
         targetPosition.y = 3;
+        transform.LookAt(targetPosition);
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, targetPosition) < 0.1f)

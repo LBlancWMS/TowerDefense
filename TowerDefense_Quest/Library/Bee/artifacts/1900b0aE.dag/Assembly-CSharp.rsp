@@ -355,6 +355,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"D:/Logiciels/Unity/Unity/2022.3.12f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"D:/Logiciels/Unity/Unity/2022.3.12f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
+"Assets/Lava_Flowing_Shader/Scripts/ScrollingUVs_Layers.cs"
 "Assets/Scripts/Base.cs"
 "Assets/Scripts/BuildManager.cs"
 "Assets/Scripts/bulletLogic.cs"
@@ -373,6 +374,8 @@
 "Assets/Scripts/UIs/Menus/Victory_Menu.cs"
 "Assets/Scripts/UIs/UIs_In_Game/Shop.cs"
 "Assets/Scripts/UI_InGame_Manager.cs"
+"Assets/TAZO_3D_C/DemoScene/Action_Manage.cs"
+"Assets/TAZO_3D_C/DemoScene/demo.cs"
 -langversion:9.0
 
 /deterministic
