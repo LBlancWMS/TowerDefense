@@ -9,12 +9,22 @@ public class Base : MonoBehaviour
     [SerializeField] private Defeat_Menu defeat_menu;
     private ennemiesSpawner spawner;
     [SerializeField] private Victory_Menu victory_Menu;
-
+    private int golds = 0;
 
     void Start()
     {
         spawner = GameObject.FindGameObjectWithTag("ennemiesSpawner").GetComponent<ennemiesSpawner>();
         Invoke("OverrideStart", 3f);
+    }
+
+    public void EarnGold(int amount)
+    {
+        golds++;
+    }
+
+    public int GetCurrentGold()
+    {
+        return golds;
     }
 
     void OverrideStart()

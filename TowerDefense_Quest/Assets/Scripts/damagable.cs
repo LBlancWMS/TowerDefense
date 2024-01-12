@@ -23,6 +23,8 @@ public class Damagable : MonoBehaviour
     private void Die()
     {
         ResetHealth();
+        GameObject baseObject = GameObject.FindGameObjectWithTag("Base");
+        baseObject.GetComponent<Base>().EarnGold(1);
         ReturnToPool();
     }
 
