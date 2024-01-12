@@ -367,6 +367,7 @@
 "Assets/Scripts/nodeLogic.cs"
 "Assets/Scripts/playerController.cs"
 "Assets/Scripts/towerLogic.cs"
+"Assets/Scripts/TurretBlueprint.cs"
 "Assets/Scripts/UIs/Menus/Defeat_Menu.cs"
 "Assets/Scripts/UIs/Menus/Main_Menu.cs"
 "Assets/Scripts/UIs/Menus/Pause_Menu.cs"
