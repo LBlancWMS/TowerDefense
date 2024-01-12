@@ -19,7 +19,7 @@ public class Base : MonoBehaviour
 
     public void EarnGold(int amount)
     {
-        golds++;
+        golds += amount;
     }
 
     public int GetCurrentGold()
