@@ -5,7 +5,8 @@ using UnityEngine;
 public class Base : MonoBehaviour
 {
     [SerializeField] private int health = 10;
-    private int timer = 120;
+    [SerializeField] private UI_InGame_Manager UI_inGame;
+    [SerializeField] private int timer = 120;
     [SerializeField] private Defeat_Menu defeat_menu;
     private ennemiesSpawner spawner;
     [SerializeField] private Victory_Menu victory_Menu;
@@ -14,7 +15,9 @@ public class Base : MonoBehaviour
     void Start()
     {
         spawner = GameObject.FindGameObjectWithTag("ennemiesSpawner").GetComponent<ennemiesSpawner>();
-        Invoke("OverrideStart", 3f);
+        UI_inGame.SetHPText(health);
+        UI_inGame.SetTimerText(timer);
+        Invoke("OverrideStart", 1f);
     }
 
     public void EarnGold(int amount)
@@ -47,6 +50,7 @@ public class Base : MonoBehaviour
         while (true)
         {
             timer --;
+            UI_inGame.SetTimerText(timer);
             if (timer <= 0f)
             {
                 TimerExpired();
@@ -67,7 +71,7 @@ public class Base : MonoBehaviour
     public void takeDMG(int damages)
     {
         health -= damages;
-
+        UI_inGame.SetHPText(health);
         if(health <= 0)
         {
             Instantiate(defeat_menu);
