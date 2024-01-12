@@ -8,7 +8,7 @@ public class BuildManager : MonoBehaviour
 
     public GameObject standardTurretPrefab;
     private TurretBlueprint turretToBuild;
-    private Base baseScript;
+    public Base baseScript;
 
     public bool canBuild { get { return turretToBuild != null; } }
 
@@ -26,14 +26,15 @@ public class BuildManager : MonoBehaviour
 
     public void BuildTurretOn(Node node)
     {
-         
-        //if (baseScript.GetCurrentGold() < turretToBuild.cost)
-        //{
-        //    return;
-        //} 
-            
+        if (baseScript.GetCurrentGold() < turretToBuild.cost)
+        {
+            return;
+        }
+
         GameObject turret = Instantiate(turretToBuild.prefab, node.transform.position + node.offset, Quaternion.identity);
         node.turret = turret;
+
+        baseScript.payGolds(turretToBuild.cost);
     }
     public void NextTurretToBuild(TurretBlueprint turret)
     {
