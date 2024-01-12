@@ -53,6 +53,7 @@ public class bulletPool : MonoBehaviour
 
     public void ReturnToPool(Bullet bullet)
     {
+        bullet.Seek(null);
         bullet.gameObject.SetActive(false);
     }
 }
