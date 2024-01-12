@@ -16,10 +16,23 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        if (target != null)
+        if (target == null)
+        {
+            this.gameObject.SetActive(false);
+            bulletPool.bulletPoolInstance.ReturnToPool(this);
+            return;
+        }
+        else
         {
             Vector3 dir = target.position - transform.position;
             float distanceEachFrame = speed * Time.deltaTime;
+
+            if (dir.magnitude <= distanceEachFrame)
+            {
+                HitTarget();
+                return;
+            }
+
             transform.Translate(dir.normalized * distanceEachFrame, Space.World);
         }
     }

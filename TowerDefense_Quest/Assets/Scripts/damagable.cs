@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class Damagable : MonoBehaviour
 {
-    public int maxHealth = 100;
-    private int currentHealth;
+    public float maxHealth = 100;
+    private float currentHealth;
 
     private void Start()
     {
         ResetHealth();
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentHealth -= damage;
 
@@ -42,7 +42,7 @@ public class Damagable : MonoBehaviour
     {
         if (other.CompareTag("Projectile"))
         {
-            TakeDamage(100);
+            TakeDamage(2);
             other.GetComponentInParent<Bullet>().HitTarget();
         }
     }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3717589105495017509}
   m_Layer: 0
-  m_Name: P_tower
+  m_Name: P_upgradedTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,9 +112,12 @@ MonoBehaviour:
   range: 10
   enemyTag: Enemy
   turretPartRotation: {fileID: 5339241417585189677}
-  turnSpeed: 7
-  fireRate: 2
   projectile: {fileID: 4158156637629932549, guid: 630fe4a52d730084fa8ac2af2423ea01, type: 3}
+  turnSpeed: 7
+  fireRate: 4
+  laserBeam: 0
+  lineRenderer: {fileID: 0}
+  damageOverTime: 30
   firePoint: {fileID: 5339241414860355327}
 --- !u!4 &5339241414860355327 stripped
 Transform:

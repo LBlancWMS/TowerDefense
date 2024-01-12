@@ -8,6 +8,7 @@ TagManager:
   - Projectile
   - Base
   - ennemiesSpawner
+  - Laser
   layers:
   - Default
   - TransparentFX

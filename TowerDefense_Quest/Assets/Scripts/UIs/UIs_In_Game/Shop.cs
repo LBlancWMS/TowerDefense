@@ -5,6 +5,8 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
     public TurretBlueprint standardTurret;
+    public TurretBlueprint upgradedStandardTurret;
+    public TurretBlueprint laserTurret;
 
     private BuildManager buildManager;
 
@@ -12,8 +14,16 @@ public class Shop : MonoBehaviour
     {
         buildManager = BuildManager.buildManagerInstance;
     }
-    public void SelectTurret()
+    public void SelectStandardTurret()
     {
         buildManager.NextTurretToBuild(standardTurret);
+    }
+    public void SelectLaserTurret()
+    {
+        buildManager.NextTurretToBuild(laserTurret);
+    }
+    public void SelectUpgradedStandardTurret()
+    {
+        buildManager.NextTurretToBuild(upgradedStandardTurret);
     }
 }
