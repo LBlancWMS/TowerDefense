@@ -245,7 +245,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5469433700775769288}
   - component: {fileID: 8434089984249471617}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Victory_Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1347dbef69325842827ce58f5cdf965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  victory_Menu: {fileID: 6046682430293251143}
 --- !u!1 &6290475013631165326
 GameObject:
   m_ObjectHideFlags: 0

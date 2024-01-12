@@ -5,7 +5,7 @@ using UnityEngine;
 public class Base : MonoBehaviour
 {
     [SerializeField] private int health = 10;
-    private int timer = 60;
+    private int timer = 120;
     [SerializeField] private Defeat_Menu defeat_menu;
     private ennemiesSpawner spawner;
     [SerializeField] private Victory_Menu victory_Menu;
@@ -59,7 +59,9 @@ public class Base : MonoBehaviour
     void TimerExpired()
     {
             Instantiate(victory_Menu);
+            victory_Menu.gameObject.SetActive(true);
             Debug.Log("victoire");
+            Time.timeScale = 0;
             Destroy(this);
     }
     public void takeDMG(int damages)
@@ -68,8 +70,10 @@ public class Base : MonoBehaviour
 
         if(health <= 0)
         {
-            Instantiate(defeat_menu, new Vector3(0,0,0), Quaternion.identity);
+            Instantiate(defeat_menu);
+            defeat_menu.gameObject.SetActive(true);
             Debug.Log("partie perdue");
+            Time.timeScale = 0;
             Destroy(this);
         }
     }

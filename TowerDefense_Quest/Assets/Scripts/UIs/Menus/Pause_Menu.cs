@@ -6,8 +6,8 @@ public class Pause_Menu : MonoBehaviour
     private bool isPaused = false;
     private void Awake()
     {
-        Time.timeScale = 1.0f;
-        gameObject.SetActive(false);
+        PauseGame();
+        //gameObject.SetActive(false);
     }
     public void PausePlay()
     {

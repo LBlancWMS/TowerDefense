@@ -372,6 +372,7 @@
 "Assets/Scripts/UIs/Menus/Settings_Menu.cs"
 "Assets/Scripts/UIs/Menus/Victory_Menu.cs"
 "Assets/Scripts/UIs/UIs_In_Game/Shop.cs"
+"Assets/Scripts/UI_InGame_Manager.cs"
 -langversion:9.0
 
 /deterministic

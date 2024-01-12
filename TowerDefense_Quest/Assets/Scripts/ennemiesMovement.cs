@@ -15,7 +15,7 @@ public class ennemiesMovement : MonoBehaviour
 
     void Update()
     {
-        if (waypoints.Length > 0)
+        if (waypoints.Length >= currentWaypointIndex)
         {
             MoveToWaypoint();
         }
@@ -51,7 +51,6 @@ public class ennemiesMovement : MonoBehaviour
 
     void ReturnToPool()
     {
-        ennemiesSpawner spawner = GameObject.Find("ennemiesSpawner").GetComponent<ennemiesSpawner>();
         spawner.returnToPool(gameObject);
     }
 }
