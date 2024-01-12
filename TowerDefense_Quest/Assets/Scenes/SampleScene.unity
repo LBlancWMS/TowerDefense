@@ -1220,7 +1220,7 @@ MonoBehaviour:
   pause_Menu: {fileID: 1442980534}
   hp_Text: {fileID: 744612378}
   timer_Text: {fileID: 1976313727}
-  golds_Text: {fileID: 0}
+  golds_Text: {fileID: 1986827313}
 --- !u!1001 &118782272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7272,7 +7272,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1744448815}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
-        m_MethodName: PurchaseTurret
+        m_MethodName: SelectTurret
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16835,8 +16835,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standardTurret:
-    prefab: {fileID: 0}
-    cost: 0
+    prefab: {fileID: 2551597290471212963, guid: c0e192224be3a1b4686cf3d9eab8a535, type: 3}
+    cost: 5
 --- !u!1 &1746990585
 GameObject:
   m_ObjectHideFlags: 0

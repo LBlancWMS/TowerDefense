@@ -24,7 +24,7 @@ public class UI_InGame_Manager : MonoBehaviour
 
     public void SetGoldsValue(int goldValues)
     {
-        golds_Text.GetComponent<Text>().text = golds_Text.ToString() + " Golds";
+        golds_Text.GetComponent<Text>().text = goldValues.ToString() + " Golds";
     }
 
     public void SetTimerText(int timeRemaining)
