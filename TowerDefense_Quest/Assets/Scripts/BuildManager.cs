@@ -7,8 +7,12 @@ public class BuildManager : MonoBehaviour
     public static BuildManager buildManagerInstance;
 
     public GameObject standardTurretPrefab;
-    private GameObject turretToBuild;
+    private TurretBlueprint turretToBuild;
+    private Base baseScript;
 
+    public bool canBuild { get { return turretToBuild != null; } }
+
+    #region
     private void Awake()
     {
         if (buildManagerInstance != null)
@@ -18,10 +22,22 @@ public class BuildManager : MonoBehaviour
 
         buildManagerInstance = this;
     }
+#endregion
 
-    public void NextTurretToBuild(GameObject turret)
+    public void BuildTurretOn(Node node)
+    {
+         
+        //if (baseScript.GetCurrentGold() < turretToBuild.cost)
+        //{
+        //    return;
+        //} 
+            
+        GameObject turret = Instantiate(turretToBuild.prefab, node.transform.position + node.offset, Quaternion.identity);
+        node.turret = turret;
+    }
+    public void NextTurretToBuild(TurretBlueprint turret)
     {
         turretToBuild = turret;
     }
-    public GameObject GetTurretToBuild() { return turretToBuild; }
+    
 }
